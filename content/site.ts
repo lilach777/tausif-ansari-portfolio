@@ -33,18 +33,19 @@ export type Stat = {
 /** Exactly four. Do not add a fifth. */
 export const impact: Stat[] = [
   {
-    value: 8.4,
+    // FereAI 6.8M + NovaSwap 1.1M + Defx 500K + BimaBTC 1.9M. TinyFish has no verified number.
+    value: 10.3,
     decimals: 1,
     suffix: "M",
-    label: "Impressions",
-    context: "FereAI 6.8M + NovaSwap 1.1M + Defx 500K",
+    label: "X impressions",
+    context: "Across four quantified client accounts",
   },
   {
     value: 13,
     decimals: 0,
     suffix: "x",
     label: "FereAI improvement",
-    context: "Weekly impressions vs. the prior ~15K/week rate",
+    context: "Weekly X impression rate, after vs. before",
   },
   {
     value: 10,
@@ -102,10 +103,10 @@ export const work: CaseStudy[] = [
     id: "fereai",
     name: "FereAI",
     descriptor: "AI agent platform · X account @fere_ai",
-    headline: "From ~15K impressions a week to 6.8M.",
+    headline: "~15K weekly impressions before → 6.8M over eight months in the analytics window.",
     before: { value: "~15K", label: "Impressions / week" },
     after: { value: "6.8M", label: "Impressions" },
-    timeframe: "My work: Nov 2025 → Apr 2026",
+    timeframe: "My work: Nov 2025 to May 2026 · X window Sep 2025 to Apr 2026",
     metrics: [
       { value: "13x", label: "vs. prior weekly rate" },
       { value: "192.4K", label: "Engagements" },
@@ -170,19 +171,20 @@ export const work: CaseStudy[] = [
   {
     id: "bimabtc",
     name: "BimaBTC",
-    descriptor: "Discord & Telegram Operations",
-    headline: "Owned Discord and Telegram community operations for BimaBTC.",
+    descriptor: "Discord, Telegram & X",
+    headline: "Owned BimaBTC’s X account and community operations across Discord and Telegram.",
     // 1.9M is the X Analytics total for 1 Sep 2025 to 27 Apr 2026 (see screenshot).
     after: { value: "1.9M", label: "X impressions" },
+    timeframe: "X Analytics window: 1 Sep 2025 to 27 Apr 2026",
     scopeMetrics: true,
     metrics: [
-      { value: "Discord + Telegram", label: "Channels" },
-      { value: "End-to-end", label: "Community operations" },
+      { value: "X account", label: "Ran" },
+      { value: "Discord + Telegram", label: "Community operations" },
       { value: "Moderation", label: "Day-to-day" },
     ],
     owned: [
-      "Owned Discord and Telegram community operations for BimaBTC.",
-      "Ran end-to-end community operations and moderation across both channels.",
+      "Ran BimaBTC’s X account: 1.9M X impressions in the analytics window.",
+      "Owned Discord and Telegram community operations and moderation.",
       "Reported community engagement, sentiment and growth back to the client.",
     ],
     evidence: {
@@ -197,21 +199,22 @@ export const work: CaseStudy[] = [
     },
   },
   {
-    // Ownership-led: no verified TinyFish metrics or screenshots exist.
+    // Ownership-led: no verified TinyFish metrics or screenshots exist. Not counted in 10.3M.
     id: "tinyfish",
     name: "TinyFish",
     descriptor: "Discord & Telegram Operations",
-    headline: "Owned Discord and Telegram community operations for TinyFish.",
+    headline:
+      "Built and ran the Discord server for a Crowwd Labs hackathon, delivered session recordings to the client, and managed the community operation through the event.",
     scopeMetrics: true,
     metrics: [
-      { value: "Discord + Telegram", label: "Channels" },
-      { value: "Community management", label: "Scope" },
-      { value: "Moderation", label: "Day-to-day" },
+      { value: "Hackathon", label: "Event" },
+      { value: "Discord server", label: "Built and ran" },
+      { value: "Session recordings", label: "Delivered" },
     ],
     owned: [
-      "Owned Discord and Telegram community operations for TinyFish.",
-      "Ran community management and Discord moderation.",
-      "Reported community engagement, sentiment and growth back to the client.",
+      "Built and ran the Discord server for the hackathon.",
+      "Delivered session recordings to the client.",
+      "Managed the community operation through the event.",
     ],
   },
 ];
@@ -225,82 +228,59 @@ export type Role = {
   current?: boolean;
   /** Client accounts run under this role (shown above the ownership points). */
   clients?: string[];
-  /** 2 to 4 ownership or result lines. */
+  /** One precise ownership line. Crowwd Labs alone carries its quantified client results. */
   points: string[];
 };
 
 export const experience: Role[] = [
   {
+    org: "Hemi Labs",
+    title: "Community Moderator",
+    current: true,
+    points: ["Own Discord and Telegram community operations for Hemi Labs."],
+  },
+  {
+    org: "Crowwd Labs",
+    title: "Community Manager & Social Engagement Specialist",
+    period: "Nov 2025 to May 2026",
+    clients: ["FereAI", "NovaSwap", "Defx", "BimaBTC", "TinyFish"],
+    points: [
+      // The FereAI analytics window starts Sep 2025, before I joined in Nov 2025, so the line says so.
+      "Owned X engagement strategy for FereAI: ~15K weekly impressions before → 6.8M over the eight-month analytics window (Sep 2025 to Apr 2026; I joined Nov 2025).",
+      "Owned NovaSwap’s growth execution from zero to 1.1M impressions in under four months at 4.7% engagement.",
+      "Ran Defx as a third account in parallel, reaching 500K impressions.",
+      "Ran BimaBTC and TinyFish as additional Crowwd Labs client accounts.",
+    ],
+  },
+  {
     org: "4DLabs",
     title: "Moderator",
     current: true,
-    points: [
-      "Day-to-day moderation and community operations across 4DLabs.",
-      "Community engagement and member-facing operations.",
-      "Maintaining active, organized community conversations.",
-    ],
+    points: ["Own day-to-day moderation and community operations across 4DLabs."],
   },
   {
     org: "Odyssey",
     title: "Ambassador",
     current: true,
-    points: [
-      "Represented Odyssey as an Ambassador.",
-      "Drove community engagement and member-facing activity.",
-      "Built Odyssey’s community presence through ambassador-led engagement.",
-    ],
-  },
-  {
-    org: "Crowwd Labs",
-    title: "Community Manager & Social Engagement Specialist",
-    period: "Nov 2025 to 2026",
-    clients: ["FereAI", "NovaSwap", "Defx", "BimaBTC", "TinyFish"],
-    points: [
-      "Owned X engagement strategy for FereAI, taking the account from ~15K impressions a week to 6.8M in the relevant analytics period.",
-      "Owned the growth execution behind NovaSwap’s zero → 1.1M impressions in under four months at 4.7% engagement.",
-      "Ran Defx as a third account in parallel, reaching 500K impressions.",
-      "Ran Discord and Telegram operations for client accounts BimaBTC and TinyFish.",
-    ],
-  },
-  {
-    org: "Hemi Labs",
-    title: "Community Moderator",
-    current: true,
-    points: [
-      "Discord and Telegram community operations for Hemi Labs.",
-      "Community moderation and member-facing engagement.",
-      "Day-to-day community activity and communication.",
-    ],
+    points: ["Represent Odyssey as an Ambassador and drive community engagement."],
   },
   {
     org: "Hyperbolic AI",
     title: "HyperMod & Lead Ambassador",
     period: "2024 to 2025",
-    points: [
-      "Owned regional community engagement as HyperMod and Lead Ambassador.",
-      "Represented Hyperbolic AI across community channels and ambassador activity.",
-      "Drove regional member engagement through community initiatives.",
-    ],
+    points: ["Owned regional community engagement as HyperMod and Lead Ambassador."],
   },
   {
     org: "Swisstronik",
     title: "Lead Ambassador",
     period: "2024 to 2025",
-    points: [
-      "Owned community representation across channels and events as Lead Ambassador.",
-      "Represented Swisstronik through ambassador-led community activity.",
-      "Drove community engagement across relevant channels and events.",
-    ],
+    points: ["Led the ambassador program and represented the ecosystem across community channels and events."],
   },
   {
     org: "DehouseAI",
     title: "Community Moderator",
     period: "2025",
-    points: [
-      "Owned Discord moderation and day-to-day community operations.",
-      "Managed member-facing community activity and discussions.",
-      "Maintained organized and active community conversations.",
-    ],
+    points: ["Owned Discord moderation, onboarding and user support."],
   },
 ];
 

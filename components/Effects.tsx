@@ -20,16 +20,19 @@ export default function Effects() {
     const countUp = (el: HTMLElement) => {
       const target = parseFloat(el.dataset.count || "0");
       const decimals = parseInt(el.dataset.decimals || "0", 10);
-      const dur = 1400;
+      const final = target.toFixed(decimals);
+      // Hidden tabs pause rAF; never leave a stat stuck on 0.
+      if (document.hidden) return;
+      const dur = 900;
       const start = performance.now();
       const tick = (now: number) => {
         const t = Math.min(1, (now - start) / dur);
         const eased = 1 - Math.pow(1 - t, 4);
-        el.textContent = (target * eased).toFixed(decimals);
+        el.textContent = t < 1 ? Math.max(1, target * eased).toFixed(decimals) : final;
         if (t < 1) requestAnimationFrame(tick);
       };
-      el.textContent = (0).toFixed(decimals);
       requestAnimationFrame(tick);
+      setTimeout(() => (el.textContent = final), dur + 200);
     };
 
     const io = new IntersectionObserver(
