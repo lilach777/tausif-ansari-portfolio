@@ -204,7 +204,7 @@ export const work: CaseStudy[] = [
     name: "TinyFish",
     descriptor: "Discord & Telegram Operations",
     headline:
-      "Built and ran the Discord server for a Crowwd Labs hackathon, delivered session recordings to the client, and managed the community operation through the event.",
+      "Built and ran the Discord server for a hackathon, delivered session recordings to the TinyFish team, and managed the community operation through the event.",
     scopeMetrics: true,
     metrics: [
       { value: "Hackathon", label: "Event" },
@@ -213,7 +213,7 @@ export const work: CaseStudy[] = [
     ],
     owned: [
       "Built and ran the Discord server for the hackathon.",
-      "Delivered session recordings to the client.",
+      "Delivered session recordings to the TinyFish team.",
       "Managed the community operation through the event.",
     ],
   },
