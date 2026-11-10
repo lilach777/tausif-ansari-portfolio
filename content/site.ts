@@ -202,7 +202,7 @@ export const work: CaseStudy[] = [
     // Ownership-led: no verified TinyFish metrics or screenshots exist. Not counted in 10.3M.
     id: "tinyfish",
     name: "TinyFish",
-    descriptor: "Discord & Telegram Operations",
+    descriptor: "Discord Operations",
     headline:
       "Built and ran the Discord server for a hackathon, delivered session recordings to the TinyFish team, and managed the community operation through the event.",
     scopeMetrics: true,
